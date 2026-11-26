@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- MX Insight app icon: a three-blade prop over ruled logbook lines.
+       Squircle follows the macOS icon grid (824 pt body inset 100 pt). -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d5a2c"/>
+      <stop offset="1" stop-color="#033d1b"/>
+    </linearGradient>
+    <!-- lit and shaded halves of each blade -->
+    <linearGradient id="lit" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#e9ecee"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#9ea4a9"/>
+      <stop offset="1" stop-color="#c3c8cc"/>
+    </linearGradient>
+    <!-- lines stop short of the prop: everything inside the prop's outline (plus a margin) is cut out -->
+    <mask id="aroundProp" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024">
+      <rect width="1024" height="1024" fill="#fff"/>
+      <g transform="translate(512 548)" fill="#000" stroke="#000" stroke-width="44" stroke-linejoin="round">
+        <use href="#outline"/>
+        <use href="#outline" transform="rotate(120)"/>
+        <use href="#outline" transform="rotate(240)"/>
+        <circle r="96"/>
+      </g>
+    </mask>
+    <clipPath id="body">
+      <rect x="100" y="100" width="824" height="824" rx="185"/>
+    </clipPath>
+
+    <!-- one blade pointing up from the hub at the origin -->
+    <path id="outline" d="M0 -70 C-22 -108 -46 -160 -58 -236 C-68 -306 -46 -364 0 -394 C46 -364 68 -306 58 -236 C46 -160 22 -108 0 -70 Z"/>
+    <g id="blade">
+      <path d="M0 -70 C-22 -108 -46 -160 -58 -236 C-68 -306 -46 -364 0 -394 Z" fill="url(#lit)"/>
+      <path d="M0 -70 C22 -108 46 -160 58 -236 C68 -306 46 -364 0 -394 Z" fill="url(#shade)"/>
+      <use href="#outline" fill="none" stroke="#7d848a" stroke-width="3"/>
+    </g>
+  </defs>
+
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#bg)"/>
+
+  <!-- ruled logbook lines -->
+  <g clip-path="url(#body)" mask="url(#aroundProp)" fill="#4f8f5f" opacity="0.75">
+    <rect x="168" y="232" width="688" height="16" rx="8"/>
+    <rect x="168" y="312" width="688" height="16" rx="8"/>
+    <rect x="168" y="392" width="688" height="16" rx="8"/>
+    <rect x="168" y="472" width="688" height="16" rx="8"/>
+    <rect x="168" y="552" width="688" height="16" rx="8"/>
+    <rect x="168" y="632" width="688" height="16" rx="8"/>
+    <rect x="168" y="712" width="688" height="16" rx="8"/>
+    <rect x="168" y="792" width="688" height="16" rx="8"/>
+  </g>
+
+  <g transform="translate(512 548)">
+    <use href="#blade"/>
+    <use href="#blade" transform="rotate(120)"/>
+    <use href="#blade" transform="rotate(240)"/>
+
+    <!-- spinner: silver collar, dark ring, faceted cone -->
+    <circle r="88" fill="#d9dde0" stroke="#7d848a" stroke-width="3"/>
+    <circle r="73" fill="none" stroke="#064a22" stroke-width="8"/>
+    <g>
+      <path d="M0 0 L0 -66 A66 66 0 0 1 57.16 -30 Z" fill="#f4f6f7"/>
+      <path d="M0 0 L57.16 -30 A66 66 0 0 1 57.16 30 Z" fill="#c9ced2"/>
+      <path d="M0 0 L57.16 30 A66 66 0 0 1 0 66 Z" fill="#a4abb0"/>
+      <path d="M0 0 L0 66 A66 66 0 0 1 -57.16 30 Z" fill="#b8bec2"/>
+      <path d="M0 0 L-57.16 30 A66 66 0 0 1 -57.16 -30 Z" fill="#dde1e4"/>
+      <path d="M0 0 L-57.16 -30 A66 66 0 0 1 0 -66 Z" fill="#ffffff"/>
+    </g>
+  </g>
+</svg>
